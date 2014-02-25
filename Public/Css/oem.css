@@ -1,0 +1,75 @@
+.sideMenuContainer{
+	width: 155px;
+	float: left;
+	margin-right: 20px;
+	background: #FFFFFF;
+}
+	.sideMenuContainer a{
+		display: inline-block;
+		width: 100%;
+		text-decoration: none;
+		color: #004B8D;
+	}
+	.sideMenuContainer h2{
+		padding: 5px 10px;
+		border-radius: 5px 5px 0 0;
+		background: #004B8D;
+	}
+	.sideMenuContainer h2 a{
+		font-size: 1.5em;
+		font-weight: bold;
+		color: #FFFFFF;
+	}
+	.sideMenuContainer a:hover{
+		text-decoration: underline;
+	}
+	.sideMenuContainer li{
+		border: 1px solid #e8e9e9;
+		border-top: none;
+	}
+	.sideMenuContainer li a{
+		display: inline-block;
+		padding: 5px 10px;
+	}
+	.sideMenuContainer li.selected{
+		border: none;
+		border-top: 1px solid #e8e9e9;
+		background: #004B8D;
+	}
+	.sideMenuContainer li.selected a{
+		color: #FFFFFF;
+	}
+
+.contentContainer{
+	width: 760px;
+	padding: 20px;
+	float: right;
+	background: #FFFFFF;
+}
+	.contentContainer h2{
+		font-size: 2em;
+		font-weight: bold;
+	}
+	.contentContainer p{
+		margin: 10px 0;
+	}
+	.contentContainer img{
+		max-width: 760px;
+	}
+
+	li.newsItem{
+		border-bottom: 1px dashed #CCCCCC;
+	}
+	p.pubDate{
+		display: inline-block;
+		margin: 0;
+		font-weight: bold;
+		color: #e74c3c;
+	}
+	.summary h2{
+		font-size: 1.3em;
+	}
+	.summary h2 a{
+		text-decoration: none;
+		color: #004B8D;
+	}

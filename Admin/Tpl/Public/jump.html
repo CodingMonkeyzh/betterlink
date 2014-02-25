@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>页面跳转</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/jump.css" />
+<script type="text/javascript" src='__PUBLIC__/Js/jquery.min.js'></script>
+</head>
+<body>
+      <div id="panel">
+      	 <p id="msgTitle"><{$msgTitle}></p>
+		 <p id="message">提示：<if condition="$error neq ''"><{$error}><else /><{$message}></if></p>
+      	 <p id="jump">页面正在跳转(<b id='time'><{$waitSecond}></b>)...若未跳转请猛戳这里<a href='<{$jumpUrl}>'> 页面跳转 </a></p>
+      </div>
+<script type="text/javascript">
+	$(document).ready(function(){
+		var time = <{$waitSecond}>;
+		setInterval(function(){
+			console.log(time);
+			time--;
+			$('#time').html(time);
+			if(time <= 0){
+				window.location.href = "<{$jumpUrl}>";
+			}
+		}, 1000);
+	});
+</script>
+</body>
+</html>

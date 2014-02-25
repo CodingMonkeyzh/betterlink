@@ -1,0 +1,93 @@
+body{
+	background: #FFFFFF;
+}
+ul.tabs a.selected{
+	border: 1px solid #00294D;
+	background: #00294D;
+	color: #FFFFFF;
+}
+ul.tabs a.selected:hover{
+	border: 1px solid #00294D;
+	background: #00294D;
+	color: #FFFFFF;
+}
+ul.tabs a:hover{
+	border: 1px solid #2980b9;
+	background: #2980b9;
+	color: #FFFFFF;
+}
+	
+#imageContainer{
+		display: none;
+		padding-top: 40px;
+		background: #00294D;
+	}
+	a.slidesjs-next, a.slidesjs-previous{
+		display: none;
+	}
+	.slidesjs-pagination {
+		float: right;
+		width: 50%;
+		text-align: center;
+		margin: 10px 0;
+		margin-right: 3%;
+		list-style: none;
+	}
+		.slidesjs-pagination li{
+			float: left;
+			margin: 0 2px;
+		}
+			.slidesjs-pagination li a{
+				display: block;
+				width: 13px;
+				height: 0;
+				padding-top: 13px;
+				background-image: url(../Images/index/pagination.png);
+				background-position: 0 0;
+				float: left;
+				overflow: hidden;
+			}
+			.slidesjs-pagination li a:hover{
+				background-position: 0 -26px;
+			}
+			.slidesjs-pagination li a.active, .slidesjs-pagination li a:hover.active {
+				background-position: 0 -13px;
+			}
+/*end of imageContainer*/
+#header{
+	position: relative;
+	margin: 0px;
+	height: 500px;
+	background: #00294D;
+}
+	h1#navLogo{
+		position: absolute;
+		left: 0;
+		top: 380px;
+		text-indent: -9999px;
+		height: 116px;
+		width: 355px;
+		background: url(../Images/index/logo1.png) 0 0  no-repeat;
+	}
+	#headerTop{
+		position: absolute;
+		top: 450px;
+		left: 355px;
+		width: 620px;
+		height: 50px;
+		background: #004B8D;
+	}
+.item td{
+	text-align: center;
+	width: 50%;
+}
+	#content_wrap table td hr{
+		border: none;
+		width: 70%;
+		border-top: 1px solid rgb(225, 225, 225);
+		margin-top: 50px;
+	}
+	.item td h2{
+		font-size: 2em;
+		font-weight: bold;
+	}

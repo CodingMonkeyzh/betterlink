@@ -1,0 +1,48 @@
+<include file='Template:head' />
+
+			<div class="sideMenuContainer">
+				<h2><a href="__APP__/OEM/oem">OEM</a></h2>
+				<ul>
+					<li><a href="__APP__/OEM/oem?id=1">业务总览</a></li>
+					<li><a href="__APP__/OEM/oem?id=2">业务能力与介绍</a></li>
+					<li><a href="__APP__/OEM/oem?id=3">技术支持与服务</a></li>
+				</ul>
+			</div>
+			<div class="contentContainer">
+				<!-- OEM下的具体分类信息
+					本页面暂时用oem_1.html~oem_4.html来模拟对应的四个（公司简介，动态，新闻，服务介绍）的后台返回
+				 -->
+			</div>
+			<div class="clear"></div>	
+		</div><!-- end of content_wrap -->
+		
+<include file='Template:foot' />
+<script type="text/javascript">
+$(function() {
+	//加载本页的css文件
+	function loadCSS(){
+		var csshref = '__PUBLIC__/Css/oem.css';
+	  	var styleTag = document.createElement("link");
+	    styleTag.setAttribute('type', 'text/css');
+	    styleTag.setAttribute('rel', 'stylesheet');
+	    styleTag.setAttribute('href', csshref);
+	    $("head")[0].appendChild(styleTag);
+	}
+	function getContent(url){
+		$.get(url, function(data){
+			$(".contentContainer").html(data);
+		});
+	}
+	// 初始化内容
+  	function initContent(){
+  		// 获取url地址中的参数id的值
+  		var idValue = getUrlParam("id");
+  		$($(".sideMenuContainer ul li")[idValue-1]).addClass("selected");
+      getContent("./oem_" + idValue + ".html");
+  	}
+  	loadCSS();
+  	initContent();
+});
+</script>
+</body>
+</html>

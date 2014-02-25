@@ -1,0 +1,90 @@
+<include file='Template:head' />
+      <div class="contentContainer">
+        <!-- Introduction下的具体分类信息
+          本页面暂时用introduction_1.html~introduction_4.html来模拟对应的四个（公司简介，动态，新闻，服务介绍）的后台返回
+         -->
+      </div>
+			<div class="sideMenuContainer">
+				<h2><a href="__APP__/Communication/communication?class=1">无线优化系统</a></h2>
+				<ul>
+					<li><a href="__APP__/Communication/communication?class=1&id=1">DAS系统</a></li>
+					<li><a href="__APP__/Communication/communication?class=1&id=2">直放站系统</a></li>
+					<li><a href="__APP__/Communication/communication?class=1&id=3">基站放大器系列</a></li>
+					<li><a href="__APP__/Communication/communication?class=1&id=4">基站延伸系统</a></li>
+				</ul>
+			</div>
+      <div class="sideMenuContainer">
+        <h2><a href="__APP__/Communication/communication?class=2">Wlan系统</a></h2>
+        <ul>
+          <li><a href="__APP__/Communication/communication?class=2&id=1">室内AP</a></li>
+          <li><a href="__APP__/Communication/communication?class=2&id=2">室外AP</a></li>
+          <li><a href="__APP__/Communication/communication?class=2&id=3">大功率AP</a></li>
+          <li><a href="__APP__/Communication/communication?class=2&id=4">AC</a></li>
+        </ul>
+      </div>
+      <div class="sideMenuContainer">
+        <h2><a href="__APP__/Communication/communication?class=3">femto系统</a></h2>
+        <ul>
+          <li><a href="__APP__/Communication/communication?class=3&id=1">LTE Smallcell</a></li>
+          <li><a href="__APP__/Communication/communication?class=3&id=2">GSM Smallcell</a></li>
+          <li><a href="__APP__/Communication/communication?class=3&id=3">WCDMA Smallcell</a></li>
+          <li><a href="__APP__/Communication/communication?class=3&id=4">专用无线通信</a></li>
+        </ul>
+      </div>
+			<div class="sideMenuContainer">
+        <h2><a href="__APP__/Communication/communication?class=4">天线设备</a></h2>
+        <ul>
+          <li><a href="__APP__/Communication/communication?class=4&id=1">室内天线</a></li>
+          <li><a href="__APP__/Communication/communication?class=4&id=2">室外小功率天线</a></li>
+          <li><a href="__APP__/Communication/communication?class=4&id=3">室外大功率天线</a></li>
+          <li><a href="__APP__/Communication/communication?class=4&id=4">特种天线</a></li>
+        </ul>
+      </div>
+      <div class="sideMenuContainer">
+        <h2><a href="__APP__/Communication/communication?class=5">无源器件</a></h2>
+        <ul>
+          <li><a href="__APP__/Communication/communication?class=5&id=1">接头</a></li>
+          <li><a href="__APP__/Communication/communication?class=5&id=2">功分器</a></li>
+          <li><a href="__APP__/Communication/communication?class=5&id=3">耦合器</a></li>
+          <li><a href="__APP__/Communication/communication?class=5&id=4">滤波器</a></li>
+           <li><a href="__APP__/Communication/communication?class=5&id=5">衰减器</a></li>
+          <li><a href="__APP__/Communication/communication?class=5&id=6">电缆</a></li>
+        </ul>
+      </div>
+			<div class="clear"></div>	
+		</div><!-- end of content_wrap -->
+		
+<include file='Template:foot' />
+<script type="text/javascript">
+$(function() {
+	//加载本页的css文件
+	function loadCSS(){
+		var csshref = '__PUBLIC__/Css/communication.css';
+	  	var styleTag = document.createElement("link");
+	    styleTag.setAttribute('type', 'text/css');
+	    styleTag.setAttribute('rel', 'stylesheet');
+	    styleTag.setAttribute('href', csshref);
+	    $("head")[0].appendChild(styleTag);
+	}
+	function getContent(url){
+		$.get(url, function(data){
+			$(".contentContainer").html(data);
+		});
+	}
+	// 初始化内容
+  	function initContent(){
+  		// 获取url地址中的参数class的值
+      var classValue = getUrlParam("class");
+      getContent("./communication_" + classValue + ".html");
+  		// 获取url地址中的参数id的值
+  		var idValue = getUrlParam("id");
+      var objSideMenuContainer = $($(".sideMenuContainer")[classValue-1]);
+      $(objSideMenuContainer.children().children()[idValue]).addClass("selected");
+  		// $($($(".sideMenuContainer")[classValue-1])[idValue-1]).addClass("selected");
+  	}
+  	loadCSS();
+  	initContent();
+});
+</script>
+</body>
+</html>

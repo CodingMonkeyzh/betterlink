@@ -1,0 +1,109 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台管理</title>
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/style.css" />
+<!-- jQuery file -->
+<script src="__PUBLIC__/Js/jquery.min.js"></script>
+<script type="text/javascript">
+$(function(){
+    $('#main_menu li').click(function(){
+        var submenu = $('.submenu');
+        submenu.hide();
+        $('#main_tab'+($(this).index()+1)).show();
+        return false;
+    });
+    $('.submenu li a').click(function(){
+        var tagUrl = $(this).attr('href');
+        $.get(tagUrl, '', function(d){
+            /*alert(d);*/
+            $('#cct').html(d);
+        });
+        return false;
+    });
+});
+</script>
+</head>
+<body>
+<div id="panelwrap">
+    
+    <div class="header">
+        <div class="title"><a href="#">Betterlink Admin</a></div>
+        
+        <div class="header_right">Welcome Admin, <a href="#" class="settings">Settings</a> <a href="#" class="logout">Logout</a> </div>
+        
+        <div class="menu">
+            <ul id="main_menu">
+                <li class="active"><a href="" class="selected">企业信息管理</a></li>
+                <li><a href="">ICT管理</a></li>
+                <li><a href="">网站设计管理</a></li>
+                <li><a href="">前台图片轮换设置</a></li>
+                <li><a href="">招聘信息管理</a></li>
+                <li><a href="">后台登陆管理</a></li>
+            </ul>
+        </div>
+    
+    </div>
+
+     <div id="main_tab1" class="submenu" style='display:block'>
+        <ul>
+        <li class="active"><a href="__APP__/Company/cpy_addMsg" class="selected">增加企业信息</a></li>
+        <li><a href="__APP__/Company/cpy_mdfMsg">修改企业信息</a></li>
+        </ul>
+    </div>
+    <div id="main_tab2" class="submenu">
+        <ul>
+        <li><a href="__APP__/Ict/ict_Category" class="selected">分类管理</a></li>
+        <li><a href="__APP__/Ict/ict_Message">信息管理</a></li>
+        </ul>
+    </div>
+    <div id="main_tab3" class="submenu">
+        <ul>
+        <li><a href="#" class="selected">分类管理</a></li>
+        <li><a href="#">信息管理</a></li>
+        </ul>
+    </div>
+    <div id="main_tab4" class="submenu">
+        <ul>
+        <li><a href="#" class="selected">图片上传/下载</a></li>
+        <li><a href="#">图片轮换相册管理</a></li>
+        </ul>
+    </div>
+    <div id="main_tab5" class="submenu">
+        <ul>
+        <li><a href="#" class="selected">增加企业招聘信息</a></li>
+        <li><a href="#">修改企业招聘信息</a></li>
+        <li><a href="#">删除企业招聘信息</a></li>
+        </ul>
+    </div>
+    <div id="main_tab6" class="submenu">
+        <ul>
+        <li><a href="#" class="selected">审核</a></li>
+        <li><a href="#">管理用户</a></li>
+        </ul>
+    </div>
+    <div id="cct"></div>
+</div>
+
+<script type="text/javascript">
+/*    $(function(){
+        // 点击小菜单，显示相应的功能块
+        $(".center_content").hide();
+        $("#content_tab1_1").show();
+        $(".submenu ul li a, ").click(function(e){
+            $(this).parent().siblings().children().removeClass("selected");
+            $(this).addClass("selected");
+            var targetDiv = $(this).attr("href");
+            console.log(targetDiv);
+            $(".center_content").hide();
+            $(targetDiv).show();
+            e.preventDefault();
+            $.get(targetDiv,,function(d){
+                alert(d);
+            });
+        });
+    });*/
+</script>       
+</body>
+</html>

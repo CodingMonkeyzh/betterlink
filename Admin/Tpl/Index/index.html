@@ -1,0 +1,67 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>后台管理</title>
+<link rel="stylesheet" href="__PUBLIC__/editor/themes/default/default.css" />
+<link rel="stylesheet" href="__PUBLIC__/editor/plugins/code/prettify.css" />
+<script charset="utf-8" src="__PUBLIC__/editor/kindeditor.js"></script>
+<script charset="utf-8" src="__PUBLIC__/editor/lang/zh_CN.js"></script>
+<script charset="utf-8" src="__PUBLIC__/editor/plugins/code/prettify.js"></script>
+
+<link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/style.css" />
+<!-- jQuery file -->
+<script src="__PUBLIC__/Js/jquery-1.9.1.js"></script>
+<script src="__PUBLIC__/Js/admin.js"></script>
+
+<script type="text/javascript">
+//加载编辑器
+    function loadEditor(){
+        KindEditor.ready(function(K) {
+            editor = K.create('textarea[name="content"]', {
+                cssPath : '__PUBLIC__/editor/plugins/code/prettify.css',
+                uploadJson : '<{:U("Index:tmp_imgUpload")}>',
+                fileManagerJson : '__PUBLIC__/editor/php/file_manager_json.php',
+                allowFileManager : true,
+                afterCreate : function() {
+                    var self = this;
+                    K.ctrl(document, 13, function() {
+                        self.sync();
+                        K('form[name=example]')[0].submit();
+                    });
+                    K.ctrl(self.edit.doc, 13, function() {
+                        self.sync();
+                        K('form[name=example]')[0].submit();
+                    });
+                }
+            });
+            prettyPrint();
+        });
+    }
+    loadEditor();
+</script>
+</head>
+<body>
+<div id="panelwrap">
+    
+    <div class="header">
+        <div class="title"><a href="#">Betterlink Admin</a></div>
+        
+        <div class="header_right">Welcome Admin, <a href="#" class="settings">Settings</a> <a href="#" class="logout">Logout</a> </div>
+        
+        <div class="menu">
+            <ul id="main_menu">
+                <li class="active"><a href="__APP__/Company/cpy_intro" >企业信息管理</a></li>
+                <li><a href="__APP__/Ict/ict_mdfCate">ICT管理</a></li>
+                <li><a href="__APP__/Web/web_mdfCate">网站设计管理</a></li>
+                <li><a href="__APP__/Gallery/pic_Upload">前台图片轮换设置</a></li>
+                <li><a href="__APP__/Job/job_mdfMsg">招聘信息管理</a></li>
+                <li><a href="__APP__/User/ad_mdf">后台登陆管理</a></li>
+            </ul>
+        </div>
+    
+    </div>
+    <div id="cct"></div>
+</div>    
+</body>
+</html>

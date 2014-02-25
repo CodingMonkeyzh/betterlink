@@ -1,0 +1,74 @@
+<include file='Template:head' />
+
+			<div class="sideMenuContainer">
+				<h2><a href="__APP__/Introduction/introduction">Introduction</a></h2>
+				<ul>
+					<li><a href="__APP__/Introduction/introduction?id=1">公司简介</a></li>
+					<li><a href="__APP__/Introduction/introduction?id=2">公司动态</a></li>
+					<li><a href="__APP__/Introduction/introduction?id=3">相关新闻</a></li>
+					<li><a href="__APP__/Introduction/introduction?id=4">服务介绍</a></li>
+				</ul>
+			</div>
+			<div class="contentContainer">
+				<!-- Introduction下的具体分类信息
+					本页面暂时用introduction_1.html~introduction_4.html来模拟对应的四个（公司简介，动态，新闻，服务介绍）的后台返回
+				 -->
+			</div>
+			<div class="clear"></div>	
+		</div><!-- end of content_wrap -->
+		
+<include file='Template:foot' />
+<script type="text/javascript">
+$(function() {
+	//加载本页的css文件
+	function loadCSS(){
+		var csshref = '__PUBLIC__/Css/introduction.css';
+	  	var styleTag = document.createElement("link");
+	    styleTag.setAttribute('type', 'text/css');
+	    styleTag.setAttribute('rel', 'stylesheet');
+	    styleTag.setAttribute('href', csshref);
+	    $("head")[0].appendChild(styleTag);
+	}
+	function getContent(url){
+		$.get(url, function(data){
+			$(".contentContainer").html(data);
+		});
+	}
+	// 初始化内容
+  	function initContent(){
+  		// 获取url地址中的参数id的值
+  		var idValue = getUrlParam("id");
+  		$($(".sideMenuContainer ul li")[idValue-1]).addClass("selected");
+  		console.log(idValue);
+  		switch(idValue){
+  			case null:
+  				getContent("./introduction_null.html");
+  				break;
+  			case "1": 
+  				getContent("./introduction_1.html");
+  				break;
+  			case "2": 
+  				getContent("./introduction_2.html");
+  				break;
+  			case "3":
+  				// 獲取新聞的文章編號
+  				var articleValue = getUrlParam("article");
+  				if(articleValue){
+  					getContent("./news_"+articleValue+".html");
+  				}else{
+  					getContent("./introduction_3.html");
+  				}
+  				break;
+  			case "4":
+  				getContent("./introduction_4.html");
+  				break;
+  			default:
+  				alert("获取信息失败");
+  		}
+  	}
+  	loadCSS();
+  	initContent();
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+#registerWrap{
+	width: 500px;
+	margin: 50px auto;
+	/*padding: 50px;*/
+	background: #FFFFFF; 
+	box-shadow: 0 0 20px #999999;
+
+}
+#registerHeader{
+	padding: 20px;
+	background:#444444 url(../Images/index/logo_small.png) right top no-repeat;
+}
+	#registerform table{
+		border-collapse: separate;
+		margin: 20px auto;
+		border-spacing: 20px;
+	}
+	td{
+		text-align: right;
+	}
+	#registerform .input_text{
+		padding: 5px 10px;
+		border: 1px solid #2980B9;
+		border-radius: 5px;
+	}
+	#registerform .input_text:focus{
+		background: #feffef;
+	}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<link rel="icon" href="__PUBLIC__/Images/index/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="__PUBLIC__/Images/index/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/cssreset.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/base.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/login.css">
+</head>
+<body>
+	<div id="loginWrap">
+		<div id="loginHeader">
+			<h2 class="h2_2em">Login</h2>
+		</div>
+		<form id="loginform" action="__URL__/doLogin" method="post">
+			<table >
+				<tr>
+					<td>User Name</td>
+					<td colspan="2" class="text-align_l"><input type="text"  class="input_text" name='named'></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td colspan="2" class="text-align_l"><input type="password" class="input_text" name='password'></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="text-align_l"><input type="submit" class="btn_green" value="Submmit"></td>
+				</tr>
+				<tr>
+					<td class="text-align_l" colspan="4">Don't have a counter? <a href="__APP__/RegisterLogin/register">Register here !</a><a href="__APP__/Index/index" style="float:right">Back to HOME</a></td>
+				</tr>
+			</table>
+		</form>
+	</div>
+</body>
+</html>

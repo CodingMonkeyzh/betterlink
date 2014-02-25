@@ -1,0 +1,75 @@
+<include file='Template:head' />
+			<div class="gallery">
+				<div id="imageContainer">
+					<a href="__APP__/Communication/communication?class=1&id=1"><img src="__PUBLIC__/Images/index/MDAS.jpg" title="image1"></a>
+					<a href="__APP__/Communication/communication?class=1&id=2"><img src="__PUBLIC__/Images/index/Pic-En-04.jpg" title="image1"></a>
+					<a href="__APP__/Communication/communication?class=1&id=3"><img src="__PUBLIC__/Images/index/small cell solutions.jpg" title="image1"></a>
+				</div>
+			</div><!-- end of gallery -->
+			<div style="text-align:center">
+			<div class="widget">
+				<div class="widgetCol">
+					<h2>Products</h2>
+					<a href="__APP__/Communication/communication">
+						<img src="__PUBLIC__/Images/index/Products.jpg">
+					</a>
+					<ul>
+						<li><a href="__APP__/Communication/communication">Communication</a></li>
+						<li><a href="__APP__/Soluction/solution">Soluction</a></li>
+						<li><a href="__APP__/OEM/oem">OEM</a></li>
+						<li><a href="__APP__/IT/it">IT Products</a></li>
+					</ul>
+				</div>
+				<div class="widgetCol">
+					<h2>Solution</h2>
+					<a href="__APP__/Solution/solution">
+						<img src="__PUBLIC__/Images/solution/solution_img01.png">
+					</a>
+					<ul>
+						<li><a href="__APP__/Solution/solution?id=1">无线优化解决方案</a></li>
+						<li><a href="__APP__/Solution/solution?id=2">femto解决方案</a></li>
+						<li><a href="__APP__/Solution/solution?id=3">Wlan解决方案</a></li>
+					</ul>
+				</div>
+				<div class="widgetCol">
+					<h2>News</h2>
+					<a href="__APP__/Introduction/introduction">
+						<img src="__PUBLIC__/Images/introduction/introduction_img01.png">
+					</a>
+					<ul>
+						<li><a href="__APP__/Introduction/introduction?id=3&article=1">News 1</a></li>
+						<li><a href="__APP__/Introduction/introduction?id=3&article=2">News 2</a></li>
+						<li><a href="__APP__/Introduction/introduction?id=3&article=3">News 3</a></li>
+						<li><a href="__APP__/Introduction/introduction?id=3&article=4">News 4</a></li>
+					</ul>
+				</div>
+				<div class="widgetCol col4">
+					<h2>About Us</h2>
+					<a href="__APP__/Introduction/introduction">
+						<img src="__PUBLIC__/Images/introduction/introduction_img02.png">
+					</a>
+					<p>Beeterlink is a company who's Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
+				</div>
+				<div class="clear"></div>
+			</div><!-- end of widget -->
+			</div>
+			
+		</div><!-- end of content_wrap -->
+		
+
+<include file='Template:foot' />
+<script type="text/javascript">
+	var csshref = '__PUBLIC__/Css/index.css';
+  	var styleTag = document.createElement("link");
+    styleTag.setAttribute('type', 'text/css');
+    styleTag.setAttribute('rel', 'stylesheet');
+    styleTag.setAttribute('href', csshref);
+    $("head")[0].appendChild(styleTag);
+	var jssrc = '__PUBLIC__/Js/index.js';
+    var scriptTag2 = document.createElement("script");
+    scriptTag2.setAttribute('type', 'text/javascript');
+    scriptTag2.setAttribute('src', jssrc);
+    $("head")[0].appendChild(scriptTag2);				
+</script>
+</body>
+</html>

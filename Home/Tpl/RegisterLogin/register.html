@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Rigester</title>
+	<link rel="icon" href="__PUBLIC__/Images/index/favicon.ico" type="image/x-icon" />
+	<link rel="shortcut icon" href="__PUBLIC__/Images/index/favicon.ico" type="image/x-icon" />
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/cssreset.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/base.css">
+	<link rel="stylesheet" type="text/css" href="__PUBLIC__/Css/register.css">
+	<script language="JavaScript">
+	 function fleshVerify(){ 
+	    //重载验证码
+	    var time = new Date().getTime();
+	        document.getElementById('verifyImg').src= '__APP__/Public/verify/'+time;
+	 }
+	 </script>	
+</head>
+<body>
+	<div id="registerWrap">
+		<div id="registerHeader">
+			<h2 class="h2_2em">Register a counter</h2>
+		</div>
+		<form id="registerform" action="__URL__/doRegister" method="post">
+			<table >
+				<tr>
+					<td>User Name</td>
+					<td class="text-align_l"><input type="text"  class="input_short input_text" name='u_name'></td>
+					<td>Nick Name</td>
+					<td class="text-align_l"><input type="text"  class="input_short input_text" name='u_named'></td>
+				</tr>
+				<tr>
+					<td>Password</td>
+					<td colspan="2" class="text-align_l"><input type="text" class="input_text" name='u_password'></td>
+				</tr>
+				<tr>
+					<td>Repassword</td>
+					<td colspan="2" class="text-align_l"><input type="text" class="input_text" name='repassword'></td>
+				</tr>				
+				<tr>
+					<td>Your company</td>
+					<td colspan="2" class="text-align_l"><input type="text" class="input_text" name='u_company'></td>
+				</tr>
+				<tr>
+					<td>Telphone Number</td>
+					<td colspan="2" class="text-align_l"><input type="text" class="input_text" name='u_telephone'></td>
+				</tr>
+				<tr>
+					<td class="text-align_l" colspan="3">Please Input the number you see in the picture..</td>
+				</tr>
+				<tr>
+					<td><input type="text"  class="input_short input_text" name='code'></td>
+					<td class="text-align_l"><img id='verifyImg' src='__APP__/Public/verify/' onclick="fleshVerify()" /></td>
+				</tr>
+				<tr>
+					<td></td>
+					<td class="text-align_l"><input type="submit" class="btn_green" value="Submmit"></td>
+				</tr>
+				<tr>
+					<td class="text-align_l" colspan="4">Have a counter? <a href="__APP__/RegisterLogin/login">Login here !</a><a href="__APP__/Index/index" style="float:right">Back to HOME</a></td>
+				</tr>
+			</table>
+
+		</form>
+	</div>
+</body>
+</html>
